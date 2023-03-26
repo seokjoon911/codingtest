@@ -6,6 +6,8 @@ public class Main {
         
         int year = sc.nextInt();
         
+        sc.close();
+        
         if(year%4 == 0 && year%100 != 0 || year%400 == 0){
             System.out.println(1);
         }
