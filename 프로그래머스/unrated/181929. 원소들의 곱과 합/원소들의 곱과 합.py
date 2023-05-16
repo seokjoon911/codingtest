@@ -1,12 +1,11 @@
-from functools import reduce
- 
-def multiply(arr):
-    return reduce(lambda x, y: x * y, arr)
- 
 def solution(num_list):
-    answer = 0
+    product = 1
+    total_sum = sum(num_list)
     
-    if sum(num_list) ** 2 > multiply(num_list):
+    for num in num_list:
+        product *= num
+    
+    if product < total_sum ** 2:
         return 1
-    
-    return answer
+    else:
+        return 0
