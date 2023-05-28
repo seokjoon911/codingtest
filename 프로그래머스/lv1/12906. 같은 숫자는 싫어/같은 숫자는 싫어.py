@@ -1,6 +1,9 @@
 def solution(arr):
-    answer = [arr[0]]  # 첫 번째 원소를 answer에 추가
+    answer = []
+    # 첫 번째 숫자를 결과 리스트에 추가
+    answer.append(arr[0])
+    # 이전 숫자와 현재 숫자를 비교하여 같지 않을 때만 결과 리스트에 추가
     for i in range(1, len(arr)):
-        if arr[i] != arr[i-1]:  # 현재 원소와 이전 원소가 다를 경우에만 추가
+        if arr[i] != arr[i - 1]:
             answer.append(arr[i])
     return answer
