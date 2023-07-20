@@ -1,13 +1,15 @@
+from itertools import permutations
+
 def solution(babbling):
     answer = 0
+    speek = ["aya","ye","woo","ma"]
+    word = []
+    for i in range(1, len(speek)+1):
+        for j in permutations(speek, i):
+            word.append(''.join(j))
+
     for i in babbling:
-        cnt = 0
-        word = ''
-        for j in i:
-            word += j
-            if word in ['aya', 'ye', 'woo', 'ma']:
-                word = ''
-                cnt += 1
-        if len(word) == 0 and cnt > 0:
-                answer += 1
+        if i in word:
+            answer += 1
+
     return answer
